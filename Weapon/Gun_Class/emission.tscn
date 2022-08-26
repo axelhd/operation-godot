@@ -1,0 +1,185 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://models/particles/PNG (Transparent)/fire_01.png" type="Texture" id=2]
+[ext_resource path="res://models/particles/PNG (Transparent)/Rotated/muzzle_01_rotated.png" type="Texture" id=3]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0.0197368, 0.0363636 ), 0.0, 1.85682, 0, 0, Vector2( 0.480263, 0 ), -13.4234, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+direction = Vector3( 0, 0, -5 )
+gravity = Vector3( 0, 10, -5 )
+initial_velocity = 2.0
+angular_velocity_random = 0.45
+linear_accel = -1.54
+linear_accel_random = 1.0
+tangential_accel_random = 0.5
+angle = 251.2
+angle_random = 0.74
+scale_curve = SubResource( 2 )
+color = Color( 0.87451, 0.686275, 0.219608, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+albedo_color = Color( 0, 0, 0, 1 )
+albedo_texture = ExtResource( 2 )
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 0.97
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="QuadMesh" id=5]
+material = SubResource( 4 )
+size = Vector2( 0.2, 0.2 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "Emit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Flash2:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Flash1:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Flash3:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Flash4:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Curve" id=7]
+max_value = 3.03
+_data = [ Vector2( 0, 0.423511 ), 0.0, -0.77602, 0, 0, Vector2( 0.776316, 0 ), -6.31687, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=9]
+direction = Vector3( 0, 0, 1 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+scale_curve = SubResource( 8 )
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_transparent = true
+albedo_color = Color( 0.956863, 0.92549, 0.458824, 0.32549 )
+albedo_texture = ExtResource( 3 )
+emission_enabled = true
+emission = Color( 0.792157, 0.462745, 0.211765, 1 )
+emission_energy = 9.7
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="QuadMesh" id=11]
+material = SubResource( 10 )
+
+[node name="Shot" type="Spatial"]
+
+[node name="Smoke" type="Particles" parent="."]
+emitting = false
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0
+randomness = 0.42
+visibility_aabb = AABB( -1.4842, -0.645274, -1.2908, 2.9684, 1.29055, 2.58161 )
+process_material = SubResource( 3 )
+draw_pass_1 = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Emit = SubResource( 6 )
+
+[node name="Flash1" type="Particles" parent="."]
+transform = Transform( -4.36424e-08, -0.998422, -0.0561527, -2.45451e-09, -0.0561527, 0.998422, -1, 4.37114e-08, 1.91069e-15, 0, 0, -0.256541 )
+emitting = false
+amount = 1
+lifetime = 0.04
+one_shot = true
+visibility_aabb = AABB( -1.40545, -1.68605, -1.41338, 2.8109, 3.3721, 2.82676 )
+process_material = SubResource( 9 )
+draw_pass_1 = SubResource( 11 )
+
+[node name="Flash2" type="Particles" parent="."]
+transform = Transform( -4.37114e-08, 4.37114e-08, -1, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, 4.37114e-08, 0, 0, -0.217541 )
+emitting = false
+amount = 1
+lifetime = 0.04
+one_shot = true
+explosiveness = 0.09
+visibility_aabb = AABB( -2.20468, -1.82865, -1.97637, 4.40936, 3.6573, 3.95275 )
+process_material = SubResource( 9 )
+draw_pass_1 = SubResource( 11 )
+
+[node name="Flash3" type="Particles" parent="."]
+transform = Transform( -6.12134e-08, -0.601606, -0.798793, -8.61932e-09, -0.798793, 0.601606, -1, 4.37114e-08, 4.37114e-08, 0, 0, -0.217541 )
+emitting = false
+amount = 1
+lifetime = 0.04
+one_shot = true
+explosiveness = 0.09
+visibility_aabb = AABB( -2.09117, -1.46534, -1.56641, 4.18235, 2.93068, 3.13283 )
+process_material = SubResource( 9 )
+draw_pass_1 = SubResource( 11 )
+
+[node name="Flash4" type="Particles" parent="."]
+transform = Transform( -2.28031e-09, 0.680542, -0.732709, -6.17752e-08, -0.732709, -0.680542, -1, 4.37114e-08, 4.37114e-08, 0, 0, -0.217541 )
+emitting = false
+amount = 1
+lifetime = 0.04
+one_shot = true
+explosiveness = 0.09
+visibility_aabb = AABB( -2.16917, -1.96334, -1.53326, 4.33835, 3.92668, 3.06652 )
+process_material = SubResource( 9 )
+draw_pass_1 = SubResource( 11 )

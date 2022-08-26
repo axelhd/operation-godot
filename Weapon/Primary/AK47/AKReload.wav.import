@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/AKReload.wav-45704af37b2c3e3e97da6b563e3e4bd4.sample"
+
+[deps]
+
+source_file="res://Weapon/Primary/AK47/AKReload.wav"
+dest_files=[ "res://.import/AKReload.wav-45704af37b2c3e3e97da6b563e3e4bd4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

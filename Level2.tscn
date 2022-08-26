@@ -1,0 +1,1196 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://FP.tscn" type="PackedScene" id=1]
+[ext_resource path="res://BD.gd" type="Script" id=2]
+[ext_resource path="res://StaticBody.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Mat/mat5.tres" type="Material" id=4]
+[ext_resource path="res://Mat/Green.tres" type="Material" id=5]
+[ext_resource path="res://BadGuy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://tree.obj" type="ArrayMesh" id=7]
+
+[node name="Level2" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Level" type="Spatial" parent="."]
+
+[node name="CSG\'s" type="Spatial" parent="Level"]
+
+[node name="CSG_Comb1ner3" type="Spatial" parent="Level/CSG\'s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Level/CSG\'s/CSG_Comb1ner3"]
+material_override = ExtResource( 4 )
+use_collision = true
+collision_layer = 2
+collision_mask = 2
+
+[node name="Leg1" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, -3 )
+width = 1.8
+height = 8.0
+depth = 1.8
+
+[node name="Leg2" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, 3 )
+width = 1.8
+height = 8.0
+depth = 1.8
+
+[node name="Leg3" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, -3 )
+width = 1.8
+height = 8.0
+depth = 1.8
+
+[node name="Leg4" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 3 )
+width = 1.8
+height = 8.0
+depth = 1.8
+
+[node name="Stair1" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 2 )
+width = 1.0
+height = 1.0
+depth = 1.0
+
+[node name="Stair2" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.75, 1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair3" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.25, 0 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair4" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair5" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.25, 1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair6" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.75, 2 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair7" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.25, 2 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair8" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.75, 1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair9" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5.25, 0 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair10" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5.25, -1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair11" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45058e-09, 5.25, -1 )
+width = 3.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair12" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5.75, 0 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair13" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6.25, 1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair14" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6.75, 2 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="CSGBox2" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.87, 9.05, 0 )
+width = 0.25
+height = 1.5
+depth = 10.0
+
+[node name="CSGBox3" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87, 9.05, 0 )
+width = 0.25
+height = 1.5
+depth = 10.0
+
+[node name="CSGBox4" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.12874e-07, 9.05, -4.87 )
+width = 0.25
+height = 1.5
+depth = 10.0
+
+[node name="CSGBox5" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner3/CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.12874e-07, 9.05, 4.87 )
+width = 0.25
+height = 1.5
+depth = 10.0
+
+[node name="CSG_Comb2ner3" type="Spatial" parent="Level/CSG\'s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Level/CSG\'s/CSG_Comb2ner3"]
+use_collision = true
+
+[node name="Floor" type="CSGBox" parent="Level/CSG\'s/CSG_Comb2ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0 )
+width = 10.0
+height = 0.6
+depth = 10.0
+material = ExtResource( 5 )
+
+[node name="Stair15" type="CSGBox" parent="Level/CSG\'s/CSG_Comb2ner3/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 1 )
+operation = 2
+width = 6.0
+height = 0.6
+depth = 4.0
+material = ExtResource( 5 )
+
+[node name="CSG_Comb1ner4" type="Spatial" parent="Level/CSG\'s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Level/CSG\'s/CSG_Comb1ner4"]
+material_override = ExtResource( 4 )
+use_collision = true
+collision_layer = 2
+collision_mask = 2
+
+[node name="Leg1" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, -3 )
+width = 1.8
+height = 8.0
+depth = 1.8
+
+[node name="Leg2" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, 3 )
+width = 1.8
+height = 8.0
+depth = 1.8
+
+[node name="Leg3" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, -3 )
+width = 1.8
+height = 8.0
+depth = 1.8
+
+[node name="Leg4" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 3 )
+width = 1.8
+height = 8.0
+depth = 1.8
+
+[node name="Stair1" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 2 )
+width = 1.0
+height = 1.0
+depth = 1.0
+
+[node name="Stair2" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.75, 1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair3" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.25, 0 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair4" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair5" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.25, 1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair6" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.75, 2 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair7" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.25, 2 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair8" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.75, 1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair9" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5.25, 0 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair10" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5.25, -1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair11" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45058e-09, 5.25, -1 )
+width = 3.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair12" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5.75, 0 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair13" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6.25, 1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair14" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6.75, 2 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="CSGBox2" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.87, 9.05, 0 )
+width = 0.25
+height = 1.5
+depth = 10.0
+
+[node name="CSGBox3" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87, 9.05, 0 )
+width = 0.25
+height = 1.5
+depth = 10.0
+
+[node name="CSGBox4" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.12874e-07, 9.05, -4.87 )
+width = 0.25
+height = 1.5
+depth = 10.0
+
+[node name="CSGBox5" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner4/CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.12874e-07, 9.05, 4.87 )
+width = 0.25
+height = 1.5
+depth = 10.0
+
+[node name="CSG_Comb2ner4" type="Spatial" parent="Level/CSG\'s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Level/CSG\'s/CSG_Comb2ner4"]
+use_collision = true
+
+[node name="Floor" type="CSGBox" parent="Level/CSG\'s/CSG_Comb2ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0 )
+width = 10.0
+height = 0.6
+depth = 10.0
+material = ExtResource( 5 )
+
+[node name="Stair15" type="CSGBox" parent="Level/CSG\'s/CSG_Comb2ner4/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 1 )
+operation = 2
+width = 6.0
+height = 0.6
+depth = 4.0
+material = ExtResource( 5 )
+
+[node name="CSG_Comb1ner5" type="Spatial" parent="Level/CSG\'s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 20 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Level/CSG\'s/CSG_Comb1ner5"]
+material_override = ExtResource( 4 )
+use_collision = true
+collision_layer = 2
+collision_mask = 2
+
+[node name="Leg1" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, -3 )
+width = 1.8
+height = 8.0
+depth = 1.8
+
+[node name="Leg2" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, 3 )
+width = 1.8
+height = 8.0
+depth = 1.8
+
+[node name="Leg3" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, -3 )
+width = 1.8
+height = 8.0
+depth = 1.8
+
+[node name="Leg4" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 3 )
+width = 1.8
+height = 8.0
+depth = 1.8
+
+[node name="Stair1" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 2 )
+width = 1.0
+height = 1.0
+depth = 1.0
+
+[node name="Stair2" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.75, 1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair3" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.25, 0 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair4" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair5" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.25, 1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair6" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.75, 2 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair7" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.25, 2 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair8" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.75, 1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair9" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5.25, 0 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair10" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5.25, -1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair11" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45058e-09, 5.25, -1 )
+width = 3.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair12" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5.75, 0 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair13" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6.25, 1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair14" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6.75, 2 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="CSGBox2" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.87, 9.05, 0 )
+width = 0.25
+height = 1.5
+depth = 10.0
+
+[node name="CSGBox3" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87, 9.05, 0 )
+width = 0.25
+height = 1.5
+depth = 10.0
+
+[node name="CSGBox4" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.12874e-07, 9.05, -4.87 )
+width = 0.25
+height = 1.5
+depth = 10.0
+
+[node name="CSGBox5" type="CSGBox" parent="Level/CSG\'s/CSG_Comb1ner5/CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.12874e-07, 9.05, 4.87 )
+width = 0.25
+height = 1.5
+depth = 10.0
+
+[node name="CSG_Comb2ner5" type="Spatial" parent="Level/CSG\'s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 20 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Level/CSG\'s/CSG_Comb2ner5"]
+use_collision = true
+
+[node name="Floor" type="CSGBox" parent="Level/CSG\'s/CSG_Comb2ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0 )
+width = 10.0
+height = 0.6
+depth = 10.0
+material = ExtResource( 5 )
+
+[node name="Stair15" type="CSGBox" parent="Level/CSG\'s/CSG_Comb2ner5/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 1 )
+operation = 2
+width = 6.0
+height = 0.6
+depth = 4.0
+material = ExtResource( 5 )
+
+[node name="Spatial" type="Spatial" parent="Level/CSG\'s"]
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Level/CSG\'s/Spatial"]
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Level/CSG\'s/Spatial/CSGCombiner"]
+width = 50.0
+height = 0.002
+depth = 50.0
+
+[node name="Spatial2" type="Spatial" parent="Level/CSG\'s"]
+
+[node name="CSG_Comb1ner" type="Spatial" parent="Level/CSG\'s/Spatial2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner"]
+material_override = ExtResource( 4 )
+use_collision = true
+collision_layer = 2
+collision_mask = 2
+
+[node name="Leg1" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, -3 )
+width = 1.8
+height = 8.0
+depth = 1.8
+
+[node name="Leg2" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, 3 )
+width = 1.8
+height = 8.0
+depth = 1.8
+
+[node name="Leg3" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, -3 )
+width = 1.8
+height = 8.0
+depth = 1.8
+
+[node name="Leg4" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 3 )
+width = 1.8
+height = 8.0
+depth = 1.8
+
+[node name="Stair1" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 2 )
+width = 1.0
+height = 1.0
+depth = 1.0
+
+[node name="Stair2" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.75, 1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair3" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.25, 0 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair4" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair5" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.25, 1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair6" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.75, 2 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair7" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.25, 2 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair8" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.75, 1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair9" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5.25, 0 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair10" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5.25, -1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair11" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45058e-09, 5.25, -1 )
+width = 3.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair12" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5.75, 0 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair13" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6.25, 1 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="Stair14" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6.75, 2 )
+width = 1.0
+height = 0.5
+depth = 1.0
+
+[node name="CSGBox2" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.87, 9.05, 0 )
+width = 0.25
+height = 1.5
+depth = 10.0
+
+[node name="CSGBox3" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87, 9.05, 0 )
+width = 0.25
+height = 1.5
+depth = 10.0
+
+[node name="CSGBox4" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.12874e-07, 9.05, -4.87 )
+width = 0.25
+height = 1.5
+depth = 10.0
+
+[node name="CSGBox5" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb1ner/CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.12874e-07, 9.05, 4.87 )
+width = 0.25
+height = 1.5
+depth = 10.0
+
+[node name="CSG_Comb2ner" type="Spatial" parent="Level/CSG\'s/Spatial2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Level/CSG\'s/Spatial2/CSG_Comb2ner"]
+use_collision = true
+
+[node name="Floor" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb2ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0 )
+width = 10.0
+height = 0.6
+depth = 10.0
+material = ExtResource( 5 )
+
+[node name="Stair15" type="CSGBox" parent="Level/CSG\'s/Spatial2/CSG_Comb2ner/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 1 )
+operation = 2
+width = 6.0
+height = 0.6
+depth = 4.0
+material = ExtResource( 5 )
+
+[node name="StaticBody" parent="Level" instance=ExtResource( 3 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.250256, -7.66672, -1.69926 )
+
+[node name="BadGuy\'s" type="Spatial" parent="Level"]
+
+[node name="BadGuy" parent="Level/BadGuy\'s" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 1.3, 13 )
+
+[node name="BadGuy2" parent="Level/BadGuy\'s" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.3, 7 )
+
+[node name="BadGuy3" parent="Level/BadGuy\'s" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.3, 1 )
+
+[node name="BadGuy4" parent="Level/BadGuy\'s" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.3, 11 )
+
+[node name="BadGuy5" parent="Level/BadGuy\'s" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1.3, -7 )
+
+[node name="BadGuy6" parent="Level/BadGuy\'s" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.3, -6 )
+
+[node name="BadGuy7" parent="Level/BadGuy\'s" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.3, -14 )
+
+[node name="BadGuy8" parent="Level/BadGuy\'s" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 10.001, 18 )
+
+[node name="BadGuy9" parent="Level/BadGuy\'s" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 10.001, 17 )
+
+[node name="BadGuy10" parent="Level/BadGuy\'s" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 10.001, -25 )
+
+[node name="BadGuy11" parent="Level/BadGuy\'s" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 10.001, 16 )
+
+[node name="BadGuy12" parent="Level/BadGuy\'s" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 10.001, 23 )
+
+[node name="BadGuy13" parent="Level/BadGuy\'s" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 10.001, -24 )
+
+[node name="BadGuy14" parent="Level/BadGuy\'s" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 10.001, -23 )
+
+[node name="BadGuy15" parent="Level/BadGuy\'s" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 10.001, -19 )
+
+[node name="BadGuy16" parent="Level/BadGuy\'s" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 10.001, -18 )
+
+[node name="tree" type="Spatial" parent="Level"]
+
+[node name="tree" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -1, 5 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree2" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -1, 4 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree3" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -1, 6 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree4" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 5 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree5" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, 1 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree6" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, 0 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree7" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -4 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree8" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -1, -2 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree9" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, -7 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree10" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -1, -9 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree11" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -1, -2 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree12" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, -7 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree13" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -1, -3 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree14" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -1, -9 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree15" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, -1, -6 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree16" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -1, 1 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree17" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -1, 4 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree18" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, 8 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree19" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -1, 11 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree20" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, 16 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree21" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 12 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree22" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1, 14 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree23" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 20 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree24" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -1, 11 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree25" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -1, -16 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree26" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -16 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree27" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, -13 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree28" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -11 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree29" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, -21 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree30" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, -22 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree31" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -1, -10 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree32" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, -1, -9 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="tree33" type="MeshInstance" parent="Level/tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, -1, 1 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="FP" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 10, 23 )

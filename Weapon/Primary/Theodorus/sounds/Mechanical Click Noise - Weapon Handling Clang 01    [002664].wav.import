@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Mechanical Click Noise - Weapon Handling Clang 01    [002664].wav-58f2e9e2d9049b875ca46581899a12d4.sample"
+
+[deps]
+
+source_file="res://Weapon/Primary/Theodorus/sounds/Mechanical Click Noise - Weapon Handling Clang 01    [002664].wav"
+dest_files=[ "res://.import/Mechanical Click Noise - Weapon Handling Clang 01    [002664].wav-58f2e9e2d9049b875ca46581899a12d4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
