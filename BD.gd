@@ -63,7 +63,7 @@ func _process(delta):
 	if FirstPerson.current_weapon == 1:
 		ShotGunHoles()
 	
-	elif FirstPerson.current_weapon == 2 or FirstPerson.current_weapon == 4:
+	elif FirstPerson.current_weapon == 2:
 		PistolHoles()
 		
 	elif FirstPerson.current_weapon == 3:

@@ -9,7 +9,7 @@ func _ready():
 	set_as_toplevel(true)
 	
 func _physics_process(delta):
-	if Input.is_action_just_pressed("fire") and FirstPerson.current_weapon == 4:
+	if shoot:
 		apply_impulse(transform.basis.z, -transform.basis.z * SPEED)
 
 

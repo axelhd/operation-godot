@@ -24,7 +24,7 @@ var fall = Vector3()
 onready var knife = $Head/Camera/MelleWeapon/Knife
 onready var head = $Head
 onready var aimcast = $Head/Camera/RayCast
-onready var muzzle = $Head/Camera/Hand/Gun/Muzzle
+onready var muzzle = $Head/Camera/Hand/Gun3/Muzzle
 onready var bullet = preload("res://Bullet.tscn")
 onready var blood_splatter = preload("res://BloodSplatter.tscn")
 onready var gun = $Head/Camera/Hand/Gun1
@@ -64,11 +64,12 @@ func melee():
 				body.health -= melee_damage
 
 func fire_not_shotgun():
-	if Input.is_action_just_pressed("fire") and aimcast != null:
+	if Input.is_action_just_pressed("fire") and aimcast != null and bullet != null:
 		if aimcast.is_colliding():
 			var b = bullet.instance()
 			muzzle.add_child(b)
 			b.look_at(aimcast.get_collision_point(), Vector3.UP)
+			b.shoot = true 
 
 func fire_shotgun():
 	if Input.is_action_just_pressed("fire") and ray_container != null:
@@ -135,21 +136,21 @@ func hw():
 
 func weapon_select():
 	
-	if Input.is_action_just_pressed("Weapon1") and mv == 0:
+	if Input.is_action_just_pressed("Weapon1"):
 		current_weapon = 1
 		print("1")
 	
-	elif Input.is_action_just_pressed("Weapon2") and mv == 0:
+	elif Input.is_action_just_pressed("Weapon2"):
 		current_weapon = 2
 		print("2")
 			
-	elif Input.is_action_just_pressed("Weapon3") and mv == 0:
+	elif Input.is_action_just_pressed("weapon4"):
 		current_weapon = 4
 		print("4")
 		
-	elif Input.is_action_just_pressed("melee") and mv == 0:
-		current_weapon = 3
-		print("3")
+	#elif Input.is_action_just_pressed("melee"):
+		#current_weapon = 3
+		#print("3")
 		
 	if FirstPerson.current_weapon == 1:
 		if gun and gun2 and knife != null:
@@ -183,13 +184,17 @@ func weapon_select():
 
 func ads_scoped1():
 	if anim != null and FirstPerson.current_weapon == 4:
+		gun3.visible = false
 		anim.play("ADS")
+		
 func ads_scoped2():
 	if anim != null and FirstPerson.current_weapon == 4:
 		anim.play_backwards("ADS")
+		
 
 func _physics_process(delta):
 	
+	weapon_select()
 	
 	hw()
 	

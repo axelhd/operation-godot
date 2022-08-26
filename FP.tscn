@@ -94,18 +94,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("Head/Camera/Hand:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
 
 [sub_resource type="Animation" id=8]
 length = 0.001
@@ -169,6 +157,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [ true ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("Head/Camera/Hand/Gun3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
 [node name="FP" type="Spatial"]
 
@@ -211,11 +211,9 @@ ads3_position = Vector3( 0.005, -0.175, -0.399 )
 deafault3_position = Vector3( 0.233, -0.305, -0.695 )
 
 [node name="Gun1" parent="FirstPerson/Head/Camera/Hand" instance=ExtResource( 3 )]
-visible = false
 
 [node name="Gun2" parent="FirstPerson/Head/Camera/Hand" instance=ExtResource( 2 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
-visible = false
 
 [node name="Gun3" parent="FirstPerson/Head/Camera/Hand" instance=ExtResource( 7 )]
 transform = Transform( -9.23538e-09, -0.00325597, -0.211256, 0.00325599, 0.211231, -0.0032556, 0.211256, -0.00325558, 5.01675e-05, 0, -0.204982, 0.00315881 )
