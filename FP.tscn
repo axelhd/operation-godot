@@ -202,7 +202,7 @@ margin_bottom = 620.0
 texture = ExtResource( 5 )
 
 [node name="Hand" type="Spatial" parent="FirstPerson/Head/Camera"]
-transform = Transform( 1, 0, 0, 0, 0.999881, -0.0154107, 0, 0.0154106, 0.999882, 0.005, -0.185, -0.399 )
+transform = Transform( 1, 0, 0, 0, 0.999881, -0.0154107, 0, 0.0154106, 0.999882, 0.842, -2.212, -2.727 )
 script = ExtResource( 6 )
 deafault_position = Vector3( 0.173, -0.236, -0.422 )
 deafault2_position = Vector3( 0.219, -0.239, -0.655 )
@@ -210,11 +210,15 @@ ads_position = Vector3( 0, -0.099, -0.023 )
 ads2_position = Vector3( 0, -0.127, -0.695 )
 ads3_position = Vector3( 0.005, -0.175, -0.399 )
 deafault3_position = Vector3( 0.233, -0.305, -0.695 )
+ads4 = Vector3( 0, -1.824, -1.869 )
+deafault4 = Vector3( 0.842, -2.212, -2.727 )
 
 [node name="Gun1" parent="FirstPerson/Head/Camera/Hand" instance=ExtResource( 3 )]
+visible = false
 
 [node name="Gun2" parent="FirstPerson/Head/Camera/Hand" instance=ExtResource( 2 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+visible = false
 
 [node name="Gun3" parent="FirstPerson/Head/Camera/Hand" instance=ExtResource( 7 )]
 transform = Transform( -9.23538e-09, -0.00325597, -0.211256, 0.00325599, 0.211231, -0.0032556, 0.211256, -0.00325558, 5.01675e-05, 0, -0.204982, 0.00315881 )

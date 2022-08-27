@@ -7,4 +7,5 @@ func _ready():
 	pass
 
 func _process(delta):
-	ZoomCam.global_transform = ZoomPos.global_transform
+	if ZoomCam and ZoomPos != null:
+		ZoomCam.global_transform = ZoomPos.global_transform

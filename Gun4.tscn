@@ -13,6 +13,7 @@ flags_unshaded = true
 albedo_texture = SubResource( 1 )
 
 [node name="Gun4" type="Spatial"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
 script = ExtResource( 2 )
 
 [node name="Muzzle" type="Spatial" parent="."]
@@ -26,11 +27,11 @@ keep_3d_linear = true
 render_target_v_flip = true
 
 [node name="ZoomCamera" type="Camera" parent="Gun4/Viewport"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.15735, 1.852, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.852, -2.168 )
 fov = 20.0
 
 [node name="CamPos" type="Position3D" parent="Gun4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.852, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17165, 1.852, 0 )
 
 [node name="Lens" type="MeshInstance" parent="Gun4"]
 mesh = ExtResource( 3 )

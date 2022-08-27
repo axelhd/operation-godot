@@ -9,6 +9,8 @@ export var ads_position : Vector3
 export var ads2_position : Vector3
 export var ads3_position : Vector3
 export var deafault3_position : Vector3
+export var ads4 : Vector3
+export var deafault4 : Vector3
 
 
 func weapons():
@@ -53,7 +55,7 @@ func _process(delta):
 		
 		if Input.is_action_pressed("fire2"):
 			FirstPerson.ads = 1
-			transform.origin = transform.origin.linear_interpolate(ads3_position, ADS_LERP * delta)
+			transform.origin = transform.origin.linear_interpolate(ads4, ADS_LERP * delta)
 		else:
 			FirstPerson.ads = 0
-			transform.origin = transform.origin.linear_interpolate(deafault3_position, ADS_LERP * delta)
+			transform.origin = transform.origin.linear_interpolate(deafault4, ADS_LERP * delta)

@@ -104,7 +104,7 @@ func hw():
 		if gun and gun2 and knife and gun3 and gun4 != null:
 			gun.visible = true
 			gun2.visible = false
-			gun4.visble = false
+			gun4.visible = false
 			gun3.visible = false
 			knife.visible = false
 			
