@@ -30,13 +30,14 @@ onready var blood_splatter = preload("res://BloodSplatter.tscn")
 onready var gun = $Head/Camera/Hand/Gun1
 onready var gun2 = $Head/Camera/Hand/Gun2
 onready var gun3 = $Head/Camera/Hand/Gun3
+onready var gun4 = $Head/Camera/Hand/Gun4
 #onready var camera = $Head/Camera/
 onready var ray_container = $Head/Camera/RayContainer
 onready var hitbox = $Head/Camera/Hitbox
 onready var melee_anim = $AnimationPlayer
 onready var anim = $AnimationPlayer2
 #THIS NEEDS TO BE REMOVED!!!!!!##################################
-func fire_pistol():
+func fire_rifle():
 	if Input.is_action_just_pressed("fire"):
 		var ray = aimcast
 		if ray != null:
@@ -63,7 +64,7 @@ func melee():
 			for body in hitbox.get_overlapping_bodies():
 				body.health -= melee_damage
 
-func fire_not_shotgun():
+func fire_scoped_sniper():
 	if Input.is_action_just_pressed("fire") and aimcast != null and bullet != null:
 		if aimcast.is_colliding():
 			var b = bullet.instance()
@@ -92,47 +93,70 @@ func _input(event):
 			head.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity)) 
 			head.rotation.x = clamp(head.rotation.x, deg2rad(-90), deg2rad(90))
 	if event.is_action_pressed("fire2"):
-		ads_scoped1()
+		ads_scoped()
 	if event.is_action_released("fire2"):
-		ads_scoped2()
+		ads_unscoped()
 	
 		
 
 func hw():
 	if FirstPerson.current_weapon == 1:
-		if gun and gun2 and knife and gun3 != null:
+		if gun and gun2 and knife and gun3 and gun4 != null:
 			gun.visible = true
 			gun2.visible = false
+			gun4.visble = false
 			gun3.visible = false
 			knife.visible = false
 			
 	if FirstPerson.current_weapon == 0:
-		if gun and gun2 and knife and gun3 != null:
+		if gun and gun2 and knife and gun3 and gun4 != null:
 			gun.visible = false
+			gun4.visble = false
 			gun3.visible = false
 			gun2.visible = false
 			knife.visible = false
 	
 	elif FirstPerson.current_weapon == 2:
-		if gun and gun2 and knife and gun3 != null:
+		if gun and gun2 and knife and gun3 and gun4 != null:
 			gun.visible = false
+			gun4.visible = false
 			gun3.visible = false
 			gun2.visible = true
 			knife.visible = false
 	
 	elif FirstPerson.current_weapon == 3:
-		if gun and gun2 and knife and gun3 != null:
+		if gun and gun2 and knife and gun3 and gun4 != null:
 			gun.visible = false
+			gun4.visbile = false
 			gun3.visible = false
 			gun2.visible = false
 			knife.visible = true
 	
-	elif FirstPerson.current_weapon == 4:
-		if gun and gun2 and knife and gun3 != null:
+	elif FirstPerson.current_weapon == 4 and ads == 0:
+		if gun and gun2 and knife and gun3 and gun4 != null:
 			gun.visible = false
 			gun3.visible = true
+			gun4.visible = false
 			gun2.visible = false
 			knife.visible = false
+				
+	elif FirstPerson.current_weapon == 4 and ads == 1:
+		if gun and gun2 and knife and gun3 and gun4 != null:
+			gun.visible = false
+			gun3.visible = false
+			gun2.visible = false
+			gun4.visible = false
+			knife.visible = false
+				
+	elif FirstPerson.current_weapon == 5:
+		if gun and gun2 and knife and gun3 and gun4 != null:
+			gun.visible = false
+			gun3.visible = false
+			gun2.visible = false
+			gun4.visible = true
+			knife.visible = false
+			
+	
 
 func weapon_select():
 	
@@ -147,50 +171,23 @@ func weapon_select():
 	elif Input.is_action_just_pressed("weapon4"):
 		current_weapon = 4
 		print("4")
-		
-	#elif Input.is_action_just_pressed("melee"):
-		#current_weapon = 3
-		#print("3")
-		
-	if FirstPerson.current_weapon == 1:
-		if gun and gun2 and knife != null:
-			gun.visible = true
-			gun2.visible = false
-			knife.visible = false
 			
-	if FirstPerson.current_weapon == 0:
-		if gun and gun2 and knife != null:
-			gun.visible = false
-			gun2.visible = false
-			knife.visible = false
-	
-	elif FirstPerson.current_weapon == 2:
-		if gun and gun2 and knife != null:
-			gun.visible = false
-			gun2.visible = true
-			knife.visible = false
-	
-	elif FirstPerson.current_weapon == 3:
-		if gun and gun2 and knife != null:
-			gun.visible = false
-			gun2.visible = false
-			knife.visible = true
-		
-	elif FirstPerson.current_weapon == 4:
-		if gun and gun2 and knife != null:
-			gun.visible = false
-			gun2.visible = false
-			knife.visible = true
+	elif Input.is_action_just_pressed("weapon5"):
+		current_weapon = 5
+		print("5")
 
-func ads_scoped1():
+
+func ads_scoped():
 	if anim != null and FirstPerson.current_weapon == 4:
-		gun3.visible = false
+		ads = 1
 		anim.play("ADS")
 		
-func ads_scoped2():
+func ads_unscoped():
 	if anim != null and FirstPerson.current_weapon == 4:
+		ads = 0
 		anim.play_backwards("ADS")
 		
+
 
 func _physics_process(delta):
 	
@@ -211,13 +208,16 @@ func _physics_process(delta):
 
 		
 	elif FirstPerson.current_weapon == 2:
-		fire_pistol()
+		fire_rifle()
 	
 	elif current_weapon == 3:
 		pass
 		#melee()
 	elif FirstPerson.current_weapon == 4:
-		fire_not_shotgun()
+		fire_scoped_sniper()
+	
+	elif FirstPerson.current_weapon == 5:
+		fire_scoped_sniper()
 
 	
 	

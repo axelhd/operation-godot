@@ -48,3 +48,12 @@ func _process(delta):
 		else:
 			FirstPerson.ads = 0
 			transform.origin = transform.origin.linear_interpolate(deafault3_position, ADS_LERP * delta)
+		
+	elif FirstPerson.current_weapon == 5:
+		
+		if Input.is_action_pressed("fire2"):
+			FirstPerson.ads = 1
+			transform.origin = transform.origin.linear_interpolate(ads3_position, ADS_LERP * delta)
+		else:
+			FirstPerson.ads = 0
+			transform.origin = transform.origin.linear_interpolate(deafault3_position, ADS_LERP * delta)
