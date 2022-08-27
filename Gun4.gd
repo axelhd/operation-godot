@@ -9,3 +9,4 @@ func _ready():
 func _process(delta):
 	if ZoomCam and ZoomPos != null:
 		ZoomCam.global_transform = ZoomPos.global_transform
+		print("x")

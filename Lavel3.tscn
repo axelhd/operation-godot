@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://House2.obj" type="ArrayMesh" id=1]
+
+[node name="Level3" type="Spatial"]
+
+[node name="House2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0763626, 0, 0.229553 )
+mesh = ExtResource( 1 )
