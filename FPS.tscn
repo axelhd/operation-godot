@@ -563,3 +563,6 @@ transform = Transform( 0.999318, 0, -0.0369228, 0, 1, 0, 0.0369228, 0, 0.999318,
 
 [node name="BadGuy5" parent="Level" instance=ExtResource( 3 )]
 transform = Transform( 0.999318, 0, -0.0369228, 0, 1, 0, 0.0369228, 0, 0.999318, 11.6714, 2, -9.07448 )
+
+[node name="Spawner" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.48512, 9.20646, 0 )

@@ -161,7 +161,6 @@ func _input(event):
 func hw():
 	if FirstPerson.current_weapon == 1:
 		if gun and gun2 and knife and gun3 and gun4 and gun6 != null:
-			print("b")
 			gun.visible = true
 			gun2.visible = false
 			gun4.visible = false
@@ -281,8 +280,8 @@ func _physics_process(delta):
 	
 	if health <= 0:
 		print("YouAreDead")
-		queue_free()
-		Fps._instance_player(Fps.id)
+		self.global_transform.origin = Vector3(0, 15, 0)
+		health = 1
 		
 	
 	direction = Vector3()
