@@ -16,6 +16,8 @@ func _ready():
 func _physics_process(delta):
 	if shoot:
 		apply_impulse(transform.basis.z, -transform.basis.z * SPEED)
+	if Input.is_action_just_pressed("DestroyBullets"):
+		queue_free()
 
 
 func _on_Area_body_entered(body):
