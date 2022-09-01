@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://UI.tscn")
+	get_tree().change_scene("res://FPS.tscn")

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/assaultrifles1.obj-8c55dddcc5b94aeac99976b2aa790c1a.mesh"
+
+[deps]
+
+files=[ "res://.import/assaultrifles1.obj-8c55dddcc5b94aeac99976b2aa790c1a.mesh" ]
+
+source_file="res://assaultrifles1.obj"
+dest_files=[ "res://.import/assaultrifles1.obj-8c55dddcc5b94aeac99976b2aa790c1a.mesh", "res://.import/assaultrifles1.obj-8c55dddcc5b94aeac99976b2aa790c1a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

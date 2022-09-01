@@ -5,10 +5,10 @@ export var speed = 500
 var space_state
 var target
 var hear = 0
-var health = 100
+var health = 1
 
 onready var particles = $Particles
-onready var BS = $blood_splatter/Particles
+#onready var BS = $blood_splatter/Particles
 onready var blood_splatter = preload("res://BloodSplatter.tscn")
 
 #var rand2 = RandomNumberGenerator.new()

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SemiAutoS1.obj-552f0265d9da1cf4fbc80da85ae134dc.mesh"
+
+[deps]
+
+files=[ "res://.import/SemiAutoS1.obj-552f0265d9da1cf4fbc80da85ae134dc.mesh" ]
+
+source_file="res://SemiAutoS1.obj"
+dest_files=[ "res://.import/SemiAutoS1.obj-552f0265d9da1cf4fbc80da85ae134dc.mesh", "res://.import/SemiAutoS1.obj-552f0265d9da1cf4fbc80da85ae134dc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

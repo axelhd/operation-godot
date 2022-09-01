@@ -17,3 +17,6 @@ material/0 = SubResource( 1 )
 
 [node name="Muzzle" type="Spatial" parent="Gun"]
 transform = Transform( 0.999999, 0, 0, 0, 1, -6.51926e-09, 0, 7.45058e-09, 1, -0.000510797, 0.00235717, -0.547948 )
+
+[node name="Muzzle" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0451324, -0.948149 )

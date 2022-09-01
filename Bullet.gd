@@ -14,8 +14,6 @@ func _physics_process(delta):
 
 
 func _on_Area_body_entered(body):
-	if body.is_in_group("Enemy"):
+	if body.is_in_group("Enemy") or body.is_in_group("Player"):
 		body.health -= DAMAGE
-		queue_free()
-	else:
 		queue_free()

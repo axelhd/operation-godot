@@ -37,18 +37,19 @@ func ShotGunHoles():
 			shots.append(b_decal.instance())
 		
 		var i = 0
-		for raycast in raycontainer.get_children():
-			var b = shots[i]
-			i = i+1
-			if raycast.is_colliding():
-				#print(b)
-				raycast.get_collider().add_child(b)
-				b.global_transform.origin = raycast.get_collision_point()
-				b.look_at(raycast.get_collision_point() + raycast.get_collision_normal(), Vector3.UP)
-				var bs = blood_splatter.instance()
-				raycast.get_collider().add_child(bs)				
-				bs.global_transform.origin = raycast.get_collision_point()
-				bs.look_at(raycast.get_collision_point() + raycast.get_collision_normal(), Vector3.UP)
+		if raycontainer != null:
+			for raycast in raycontainer.get_children():
+				var b = shots[i]
+				i = i+1
+				if raycast.is_colliding():
+					#print(b)
+					raycast.get_collider().add_child(b)
+					b.global_transform.origin = raycast.get_collision_point()
+					b.look_at(raycast.get_collision_point() + raycast.get_collision_normal(), Vector3.UP)
+					var bs = blood_splatter.instance()
+					raycast.get_collider().add_child(bs)				
+					bs.global_transform.origin = raycast.get_collision_point()
+					bs.look_at(raycast.get_collision_point() + raycast.get_collision_normal(), Vector3.UP)
 		
 			
 #func PistolHoles():
