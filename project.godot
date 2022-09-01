@@ -35,7 +35,6 @@ Fps="*res://FPS.tscn"
 
 window/size/width=1920
 window/size/height=1200
-window/size/borderless=true
 
 [editor]
 
