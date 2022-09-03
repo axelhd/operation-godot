@@ -273,45 +273,45 @@ func ads_unscoped():
 
 
 func _physics_process(delta):
-	
+
+
 	weapon_select()
-	
+		
 	hw()
-	
+		
 	if health <= 0:
 		print("YouAreDead")
 		self.global_transform.origin = Vector3(0, 15, 0)
 		health = 1
+			
 		
-	
 	direction = Vector3()
 	#weapon_select()
-	
-	#guncam.global_transform = camera.global_transform
+		
+		#guncam.global_transform = camera.global_transform
 	if FirstPerson.current_weapon == 1:
 		fire_shotgun_projectile()
 
-		
+			
 	elif FirstPerson.current_weapon == 2:
 		fire_rifle()
-	
 	elif current_weapon == 3:
 		pass
-		#melee()
+			#melee()
 	elif FirstPerson.current_weapon == 4:
 		fire_scoped_sniper()
-	
+		
 	elif FirstPerson.current_weapon == 5:
 		fire_scoped_sniper()
-	
+		
 	elif FirstPerson.current_weapon == 6:
 		fire_assault()
 
-	
-	
-	
-	
-	
+		
+		
+		
+		
+		
 	if Input.is_action_just_pressed(("ui_cancel")):
 		if mv == 0:
 			mv = 1
@@ -323,34 +323,28 @@ func _physics_process(delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			print(mv)
 			print("iv")
-	
+		
 
-	if is_network_master():
-		if not is_on_floor():
-			fall.y -= gravity * delta
+
+	if not is_on_floor():
+		fall.y -= gravity * delta
 			
-		if Input.is_action_just_pressed("jump") and is_on_floor():
-			fall.y = jump
-			
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		fall.y = jump
+	
+	if Input.is_action_pressed("move_forward"):
+		direction -= transform.basis.z
 		
-		if Input.is_action_pressed("move_forward"):
-		
-			direction -= transform.basis.z
-		
-		elif Input.is_action_pressed("move_backward"):
+	if Input.is_action_pressed("move_backward"):
+		direction += transform.basis.z
 			
-			direction += transform.basis.z
+	if Input.is_action_pressed("move_left"):
+		direction -= transform.basis.x
 			
-		if Input.is_action_pressed("move_left"):
-			
-			direction -= transform.basis.x
-			
-		elif Input.is_action_pressed("move_right"):
-			
-			direction += transform.basis.x
-			
-			
-		direction = direction.normalized()
-		velocity = velocity.linear_interpolate(direction * speed, acceleration * delta) 
-		velocity = move_and_slide(velocity, Vector3.UP) 
-		move_and_slide(fall, Vector3.UP)
+	if Input.is_action_pressed("move_right"):
+		direction += transform.basis.x
+
+	direction = direction.normalized()
+	velocity = velocity.linear_interpolate(direction * speed, acceleration * delta) 
+	velocity = move_and_slide(velocity, Vector3.UP) 
+	move_and_slide(fall, Vector3.UP)
